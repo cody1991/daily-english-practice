@@ -1,7 +1,7 @@
 import copy
 import unittest
 
-from app.server import apply_action, completion_streak
+from app.server import apply_action, completion_streak, state_for_display
 
 
 def state_for(day="2026-07-27"):
@@ -42,6 +42,19 @@ class LearningStateTests(unittest.TestCase):
         self.assertEqual(reset["today"]["status"], "ready")
         self.assertEqual(reset["profile"]["streak"], 0)
         self.assertEqual(reset["review"], [])
+
+    def test_empty_state_has_no_lesson_or_fake_review(self):
+        state = {
+            "profile": {"streak": 0, "completed_dates": [], "last_completed_date": None},
+            "review": [],
+            "activity": [],
+        }
+
+        displayed = state_for_display(state)
+
+        self.assertNotIn("today", displayed)
+        self.assertEqual(displayed["review"], [])
+        self.assertEqual(len(displayed["week"]), 5)
 
 
 if __name__ == "__main__":

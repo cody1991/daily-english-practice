@@ -67,12 +67,12 @@ def review_for_display(review: list[dict], today: date) -> list[dict]:
     return sorted(items, key=lambda item: item["due_date"])
 
 
-def week_for_display(state: dict) -> list[dict]:
-    current_lesson = state["today"]
-    current_day = lesson_day(current_lesson)
+def week_for_display(state: dict, current_day: date) -> list[dict]:
+    current_lesson = state.get("today")
     week_start = current_day.fromordinal(current_day.toordinal() - current_day.weekday())
     lessons = {item["id"][:10]: item for item in state.get("history", [])}
-    lessons[current_lesson["id"][:10]] = current_lesson
+    if current_lesson:
+        lessons[current_lesson["id"][:10]] = current_lesson
     action_by_lesson = {item["lesson_id"]: item["action"] for item in state.get("activity", [])}
     action_state = {"complete": "completed", "hard": "needs_review", "skip": "skipped"}
     week = []
@@ -100,13 +100,16 @@ def week_for_display(state: dict) -> list[dict]:
 
 def state_for_display(state: dict) -> dict:
     displayed = deepcopy(state)
-    today = lesson_day(displayed["today"])
+    today = lesson_day(displayed["today"]) if displayed.get("today") else date.today()
+    displayed["current_date"] = today.strftime("%A, %-d %B")
     displayed["review"] = review_for_display(displayed.get("review", []), today)
-    displayed["week"] = week_for_display(displayed)
+    displayed["week"] = week_for_display(displayed, today)
     return displayed
 
 
 def apply_action(state: dict, action: str) -> dict:
+    if not state.get("today"):
+        raise ValueError("There is no lesson to log today.")
     lesson = state["today"]
     previous_status = lesson.get("status", "ready")
     profile = state.setdefault("profile", {})

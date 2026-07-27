@@ -47,20 +47,29 @@ function renderWeek(items) {
 
 function render(state) {
   const lesson = state.today;
-  document.querySelector("#lesson-date").textContent = lesson.date;
-  document.querySelector("#today-title").textContent = lesson.theme;
-  document.querySelector(".lesson-intro h2").textContent = lesson.theme;
+  document.querySelector("#lesson-date").textContent = lesson?.date || state.current_date;
+  document.querySelector("#route-label").textContent = lesson ? `Today’s route · ${state.profile.minutes} min` : "Today’s lesson";
+  document.querySelector("#streak-value").textContent = state.profile.streak;
+  document.querySelector("#review-count").textContent = String(state.review.length).padStart(2, "0");
+  renderReview(state.review);
+  renderWeek(state.week);
+
+  const hasLesson = Boolean(lesson);
+  document.querySelector("#today-title").textContent = hasLesson ? lesson.theme : "No lesson yet.";
+  document.querySelector("#empty-copy").hidden = hasLesson;
+  document.querySelector("#source-meta").hidden = !hasLesson;
+  document.querySelector("#source-link").hidden = !hasLesson;
+  document.querySelector("#practice-plan").hidden = !hasLesson;
+  document.querySelector("#phrase-section").hidden = !hasLesson;
+  if (!hasLesson) return;
+
   document.querySelector("#source-name").textContent = lesson.source;
   document.querySelector("#source-duration").textContent = `${lesson.duration} · ${lesson.segment}`;
   document.querySelector("#source-accent").textContent = lesson.accent;
   document.querySelector("#source-link").href = lesson.source_url;
   document.querySelector("#listen-task").textContent = lesson.listen_task;
   document.querySelector("#speaking-task").textContent = lesson.speaking_task;
-  document.querySelector("#streak-value").textContent = state.profile.streak;
-  document.querySelector("#review-count").textContent = String(state.review.length).padStart(2, "0");
   renderPhrases(lesson.phrases);
-  renderReview(state.review);
-  renderWeek(state.week);
 
   const logged = lesson.status !== "ready";
   document.querySelectorAll("[data-action]").forEach((button) => {
