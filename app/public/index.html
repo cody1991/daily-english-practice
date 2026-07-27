@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daily English</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="wordmark" href="/">daily<br /><em>english</em></a>
+        <nav aria-label="Primary navigation">
+          <a class="active" href="#today">Today</a>
+          <a href="#review">Review queue <span id="review-count">03</span></a>
+          <a href="#week">This week</a>
+        </nav>
+        <div class="side-note">
+          <span class="eyebrow">The rule</span>
+          <p>One real voice. One small answer. Every day.</p>
+        </div>
+      </aside>
+
+      <main>
+        <header class="masthead">
+          <div>
+            <span class="eyebrow" id="lesson-date">Monday, 27 July</span>
+            <h1>Make English<br />a place you <em>go.</em></h1>
+          </div>
+          <div class="streak" aria-label="Current learning streak"><strong id="streak-value">0</strong><span>day<br />streak</span></div>
+        </header>
+
+        <section class="today-layout" id="today" aria-labelledby="today-title">
+          <div class="lesson-intro">
+            <span class="eyebrow">Today’s route · 20 min</span>
+            <h2 id="today-title">Disagree without<br />closing the room.</h2>
+            <p class="lede">A short work conversation about being open to opposing views, then a low-stakes way to try the language yourself.</p>
+            <div class="meta-line"><span id="source-name">HBR IdeaCast</span><span>·</span><span id="source-duration">06:20 selected segment</span><span>·</span><span id="source-accent">US English</span></div>
+            <a class="source-link" id="source-link" target="_blank" rel="noreferrer">Open the source <span>↗</span></a>
+          </div>
+          <figure class="commute-image">
+            <img src="/assets/commute-practice.png" alt="A commuter studying English on a train" />
+            <figcaption>Make the train ride count.</figcaption>
+          </figure>
+        </section>
+
+        <section class="practice-grid" aria-label="Today’s practice plan">
+          <article>
+            <span class="step">01 / listen</span>
+            <p id="listen-task">First pass: identify one moment where the speaker disagrees without sounding defensive.</p>
+          </article>
+          <article>
+            <span class="step">02 / say</span>
+            <p id="speaking-task">In 30 seconds, explain one concern about a work decision and end with a question.</p>
+          </article>
+          <article class="status-panel">
+            <span class="step">03 / log it</span>
+            <p id="status-copy">No perfect study session required. Just make contact with the language.</p>
+            <div class="action-row">
+              <button class="primary" data-action="complete">Done</button>
+              <button data-action="hard">Too hard</button>
+              <button data-action="skip">Skip today</button>
+            </div>
+          </article>
+        </section>
+
+        <section class="phrase-section" aria-labelledby="phrase-title">
+          <div class="section-heading"><span class="eyebrow">Keep these</span><h2 id="phrase-title">Three lines worth carrying.</h2></div>
+          <div class="phrase-list" id="phrase-list"></div>
+        </section>
+
+        <section class="lower-grid">
+          <div class="review-section" id="review">
+            <span class="eyebrow">Review queue</span>
+            <h2>Bring it back<br />before it fades.</h2>
+            <div class="review-list" id="review-list"></div>
+          </div>
+          <div class="week-section" id="week">
+            <span class="eyebrow">This week</span>
+            <div class="week-strip" id="week-strip"></div>
+            <p>Work language twice, everyday conversation once, then a light review on Friday.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

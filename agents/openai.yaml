@@ -1,0 +1,4 @@
+interface:
+  display_name: "Daily English Practice"
+  short_description: "Curate daily listening and speaking practice."
+  default_prompt: "Use $daily-english-practice to create today’s 20-minute listening and speaking lesson."

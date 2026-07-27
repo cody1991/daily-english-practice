@@ -1,0 +1,39 @@
+{
+  "profile": {
+    "name": "Cody",
+    "goal": "Daily conversation and work English",
+    "minutes": 20,
+    "streak": 0
+  },
+  "today": {
+    "id": "2026-07-27-disagree",
+    "date": "Monday, 27 July",
+    "status": "ready",
+    "theme": "Disagree without closing the room",
+    "source": "HBR IdeaCast",
+    "source_type": "Podcast + transcript",
+    "source_url": "https://hbr.org/podcast/2026/03/learn-to-disagree-more-effectively",
+    "duration": "06:20 selected segment",
+    "accent": "US English",
+    "listen_task": "First pass: identify one moment where the speaker disagrees without sounding defensive.",
+    "speaking_task": "In 30 seconds, explain one concern about a work decision and end with a question.",
+    "phrases": [
+      {"phrase": "I see the logic, but I am not fully convinced yet.", "note": "A calm way to register a reservation."},
+      {"phrase": "Could we pressure-test that assumption?", "note": "Invite examination instead of rejecting an idea."},
+      {"phrase": "What would change your mind?", "note": "Keep a disagreement collaborative."}
+    ]
+  },
+  "review": [
+    {"phrase": "Could you walk me through that again?", "due": "Today", "context": "Ask for clarification"},
+    {"phrase": "I will circle back once I have checked.", "due": "Tomorrow", "context": "Set a follow-up"},
+    {"phrase": "That is a good point. My concern is...", "due": "Wed", "context": "Offer a different view"}
+  ],
+  "week": [
+    {"day": "M", "label": "disagree", "state": "today"},
+    {"day": "T", "label": "small talk", "state": "planned"},
+    {"day": "W", "label": "clarify", "state": "planned"},
+    {"day": "T", "label": "feedback", "state": "planned"},
+    {"day": "F", "label": "retell", "state": "planned"}
+  ],
+  "activity": []
+}
