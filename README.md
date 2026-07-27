@@ -20,6 +20,8 @@ Create a lesson JSON following `references/lesson_format.md`, then publish it:
 python3 scripts/publish_lesson.py lesson.json --project-root .
 ```
 
+Every lesson includes an exact source time range such as `00:00–04:30`, so the listening task can begin immediately.
+
 When `.env` contains `WECOM_WEBHOOK_URL`, send the compact daily reminder:
 
 ```bash

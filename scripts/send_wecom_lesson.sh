@@ -33,7 +33,7 @@ lesson = json.load(open(sys.argv[1], encoding="utf-8"))["today"]
 content = "\n".join([
     "**Daily English · 20 min**",
     f"> {lesson['theme']}",
-    f"[{lesson['source']} · {lesson['duration']}]({lesson['source_url']})",
+    f"[{lesson['source']} · {lesson['duration']} · {lesson['segment']}]({lesson['source_url']})",
     "",
     f"**Listen**  {lesson['listen_task']}",
     f"**Say**  {lesson['speaking_task']}",

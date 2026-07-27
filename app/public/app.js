@@ -7,7 +7,7 @@ function render(state) {
   document.querySelector(".lesson-intro h2").innerHTML = lesson.theme.replace(" ", "<br />");
   document.querySelector(".lede").textContent = "A real voice, one small response, and a way to carry the language into your next conversation.";
   document.querySelector("#source-name").textContent = lesson.source;
-  document.querySelector("#source-duration").textContent = lesson.duration;
+  document.querySelector("#source-duration").textContent = `${lesson.duration} · ${lesson.segment}`;
   document.querySelector("#source-accent").textContent = lesson.accent;
   document.querySelector("#source-link").href = lesson.source_url;
   document.querySelector("#listen-task").textContent = lesson.listen_task;

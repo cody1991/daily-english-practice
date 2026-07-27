@@ -20,7 +20,7 @@ Assume this default profile unless the user overrides it:
 
 1. Read `references/source_policy.md` and `references/lesson_format.md`.
 2. Read `.learning/state.json` when it exists. Avoid an already used canonical URL, avoid the same source family within 3 days, and avoid the same conversation scenario within 7 days unless it is a planned review.
-3. Research current candidates with `agent-reach`. Prefer a 3-8 minute segment from an official source page, channel, or feed with English subtitles or a transcript.
+3. Research current candidates with `agent-reach`. Prefer a 3-8 minute segment from an official source page, channel, or feed with English subtitles or a transcript. Record its exact start and end timestamps; do not label an unspecified clip as a "selected segment".
 4. Choose one source that serves either workplace communication or everyday social English. Use work material about communication, feedback, clarification, disagreement, prioritisation, or meetings; do not choose generic business news by default.
 5. Create exactly one lesson: a listening focus, 2-3 reusable phrases, and one 30-second speaking task. Do not overload the learner with extra links or vocabulary lists.
 6. Save the lesson JSON locally, then run `scripts/publish_lesson.py` to update the dashboard state. The script preserves profile, prior activity, and the review queue.
@@ -30,7 +30,7 @@ Assume this default profile unless the user overrides it:
 
 - Use original source links. Do not reproduce full articles, full transcripts, or lyrics.
 - Keep source quotations brief and necessary for the exercise. Prefer original task wording and paraphrase.
-- State the source, content type, segment duration, and accent when known.
+- State the source, content type, segment duration, exact playable time range, and accent when known.
 - Make the speaking task concrete and personal: a 30-second retell, clarification, opinion, or workplace response.
 - Keep the default day to 20 minutes: 8 minutes first listening, 5 minutes transcript-assisted listening, 4 minutes shadowing, and 3 minutes speaking/review.
 - Treat `Too hard` feedback as a signal to select a shorter, slower, or more scaffolded source next time.

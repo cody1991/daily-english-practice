@@ -5,13 +5,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from copy import deepcopy
 from datetime import datetime, timedelta
 from pathlib import Path
 
 
 REQUIRED_FIELDS = {
-    "id", "date", "theme", "source", "source_type", "source_url", "duration",
+    "id", "date", "theme", "source", "source_type", "source_url", "duration", "segment",
     "accent", "listen_task", "speaking_task", "phrases",
 }
 
@@ -28,6 +29,8 @@ def validate_lesson(lesson: dict) -> None:
         raise ValueError("Lesson must include 2-3 reusable phrases.")
     if not lesson["source_url"].startswith(("https://", "http://")):
         raise ValueError("Lesson source_url must be an HTTP(S) URL.")
+    if not re.fullmatch(r"\d{1,2}:\d{2}(?::\d{2})?\s*[–-]\s*\d{1,2}:\d{2}(?::\d{2})?", lesson["segment"]):
+        raise ValueError("Lesson segment must be an exact time range, for example '00:00–06:20'.")
 
 
 def due_label(days: int) -> str:
