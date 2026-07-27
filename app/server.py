@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+from copy import deepcopy
 from datetime import date, datetime, timezone
 from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -46,6 +47,65 @@ def completion_streak(completed_dates: list[str]) -> int:
     return streak
 
 
+def review_due_label(due_date: str, today: date) -> str:
+    difference = (date.fromisoformat(due_date) - today).days
+    if difference < 0:
+        return "已逾期"
+    if difference == 0:
+        return "今天"
+    if difference == 1:
+        return "明天"
+    return date.fromisoformat(due_date).strftime("%m/%d")
+
+
+def review_for_display(review: list[dict], today: date) -> list[dict]:
+    items = []
+    for item in review:
+        due_date = item.get("due_date")
+        if due_date:
+            items.append({**item, "due_label": review_due_label(due_date, today)})
+    return sorted(items, key=lambda item: item["due_date"])
+
+
+def week_for_display(state: dict) -> list[dict]:
+    current_lesson = state["today"]
+    current_day = lesson_day(current_lesson)
+    week_start = current_day.fromordinal(current_day.toordinal() - current_day.weekday())
+    lessons = {item["id"][:10]: item for item in state.get("history", [])}
+    lessons[current_lesson["id"][:10]] = current_lesson
+    action_by_lesson = {item["lesson_id"]: item["action"] for item in state.get("activity", [])}
+    action_state = {"complete": "completed", "hard": "needs_review", "skip": "skipped"}
+    week = []
+
+    for offset in range(5):
+        day = week_start.fromordinal(week_start.toordinal() + offset)
+        lesson = lessons.get(day.isoformat())
+        if lesson:
+            status = lesson.get("status") or action_state.get(action_by_lesson.get(lesson["id"]), "planned")
+            week.append({
+                "day": day.strftime("%a"),
+                "date": day.strftime("%d %b"),
+                "label": lesson.get("theme", "Lesson"),
+                "state": "today" if day == current_day and status == "ready" else status,
+            })
+        else:
+            week.append({
+                "day": day.strftime("%a"),
+                "date": day.strftime("%d %b"),
+                "label": "待生成" if day >= current_day else "未生成",
+                "state": "empty",
+            })
+    return week
+
+
+def state_for_display(state: dict) -> dict:
+    displayed = deepcopy(state)
+    today = lesson_day(displayed["today"])
+    displayed["review"] = review_for_display(displayed.get("review", []), today)
+    displayed["week"] = week_for_display(displayed)
+    return displayed
+
+
 def apply_action(state: dict, action: str) -> dict:
     lesson = state["today"]
     previous_status = lesson.get("status", "ready")
@@ -57,11 +117,26 @@ def apply_action(state: dict, action: str) -> dict:
         lesson["status"] = "ready"
         lesson.pop("difficulty_note", None)
         completed_dates.discard(lesson_date)
+        state["review"] = [
+            item for item in state.get("review", [])
+            if item.get("source_lesson_id") != lesson["id"]
+        ]
     elif previous_status != "ready":
         raise ValueError("Today is already logged. Use Edit today before changing it.")
     elif action == "complete":
         lesson["status"] = "completed"
         completed_dates.add(lesson_date)
+        review = state.setdefault("review", [])
+        existing_phrases = {item["phrase"] for item in review}
+        due_date = lesson_day(lesson).fromordinal(lesson_day(lesson).toordinal() + 3).isoformat()
+        for phrase in lesson.get("phrases", []):
+            if phrase["phrase"] not in existing_phrases:
+                review.append({
+                    "phrase": phrase["phrase"],
+                    "due_date": due_date,
+                    "context": phrase["note"],
+                    "source_lesson_id": lesson["id"],
+                })
     elif action == "hard":
         lesson["status"] = "needs_review"
         lesson["difficulty_note"] = "Bring this back with slower audio and a shorter speaking task."
@@ -108,14 +183,14 @@ class LearningHandler(SimpleHTTPRequestHandler):
 
     def do_GET(self) -> None:
         if urlparse(self.path).path == "/api/state":
-            self.send_json(load_state())
+            self.send_json(state_for_display(load_state()))
             return
         super().do_GET()
 
     def do_POST(self) -> None:
         path = urlparse(self.path).path
         if path == "/api/sync":
-            self.send_json({"state": load_state(), "sync": sync_state()})
+            self.send_json({"state": state_for_display(load_state()), "sync": sync_state()})
             return
         if path != "/api/action":
             self.send_error(HTTPStatus.NOT_FOUND)
@@ -140,7 +215,7 @@ class LearningHandler(SimpleHTTPRequestHandler):
             self.send_json({"error": str(error)}, HTTPStatus.CONFLICT)
             return
         save_state(state)
-        self.send_json(state)
+        self.send_json(state_for_display(state))
 
     def send_json(self, data: dict, status: HTTPStatus = HTTPStatus.OK) -> None:
         body = json.dumps(data, ensure_ascii=False).encode("utf-8")

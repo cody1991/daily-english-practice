@@ -22,11 +22,15 @@ function renderPhrases(phrases) {
 
 function renderReview(items) {
   const container = document.querySelector("#review-list");
+  if (items.length === 0) {
+    container.replaceChildren(makeElement("p", "review-empty", "完成一节课程后，有用的表达会在三天后回到这里。"));
+    return;
+  }
   container.replaceChildren(...items.map((item) => {
     const row = makeElement("div", "review-item");
     const copy = document.createElement("div");
     copy.append(makeElement("strong", "", item.phrase), makeElement("span", "", item.context));
-    row.append(makeElement("time", "", item.due), copy);
+    row.append(makeElement("time", "", item.due_label), copy);
     return row;
   }));
 }
@@ -34,9 +38,9 @@ function renderReview(items) {
 function renderWeek(items) {
   const container = document.querySelector("#week-strip");
   container.replaceChildren(...items.map((item) => {
-    const state = ["today", "planned", "completed"].includes(item.state) ? item.state : "planned";
+    const state = ["today", "planned", "completed", "needs_review", "skipped", "empty"].includes(item.state) ? item.state : "empty";
     const cell = makeElement("div", `day-cell ${state}`);
-    cell.append(makeElement("b", "", item.day), makeElement("span", "", item.label));
+    cell.append(makeElement("b", "", item.day), makeElement("time", "", item.date), makeElement("span", "", item.label));
     return cell;
   }));
 }

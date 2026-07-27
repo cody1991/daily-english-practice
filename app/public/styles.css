@@ -63,10 +63,15 @@ button:disabled { cursor:not-allowed; opacity:.55; transform:none; }
 .review-item time { color:var(--orange); font:500 11px "DM Mono", monospace; text-transform:uppercase; }
 .review-item strong { display:block; font-family:Fraunces, Georgia, serif; font-size:18px; font-weight:500; }
 .review-item span { color:var(--muted); font-size:12px; }
+.review-empty { margin:22px 0 0; color:var(--muted); font-size:14px; }
 .week-strip { display:grid; grid-template-columns:repeat(5, 1fr); gap:7px; margin:24px 0 20px; }
 .day-cell { min-height:94px; padding:9px; border:1px solid var(--line); display:flex; flex-direction:column; justify-content:space-between; }
 .day-cell.today { border-color:var(--ink); background:var(--lime); }
+.day-cell.completed { border-color:#879c7d; background:#e6efe0; }
+.day-cell.needs_review { border-color:var(--orange); background:#fff1eb; }
+.day-cell.skipped, .day-cell.empty { opacity:.65; }
 .day-cell b { font:500 14px "DM Mono", monospace; }
+.day-cell time { color:var(--muted); font:500 10px "DM Mono", monospace; }
 .day-cell span { font-size:11px; line-height:1.05; }
 .week-section > p { max-width:300px; color:var(--muted); font-size:13px; }
 @media (max-width: 820px) { .app-shell { display:block; } .sidebar { position:static; height:auto; padding:20px 22px; border-right:0; border-bottom:1px solid var(--line); } nav { display:flex; gap:18px; margin-top:20px; overflow:auto; } nav a { flex:none; } .side-note { display:none; } main { padding:30px 22px 52px; } .masthead { padding-bottom:28px; } .today-layout, .lower-grid { grid-template-columns:1fr; gap:28px; } .commute-image { min-height:300px; } .commute-image img { min-height:300px; object-position:72% center; } .practice-grid { grid-template-columns:1fr; } .practice-grid article, .practice-grid article + article { min-height:auto; padding:19px 0; border-right:0; border-bottom:1px solid var(--line); } .status-panel { margin:0 -22px; padding:22px !important; } .phrase-row { grid-template-columns:34px 1fr; } .phrase-note { grid-column:2; } .streak { display:none; } }

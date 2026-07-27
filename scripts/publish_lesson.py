@@ -7,7 +7,6 @@ import argparse
 import json
 import re
 from copy import deepcopy
-from datetime import datetime, timedelta
 from pathlib import Path
 
 
@@ -33,10 +32,6 @@ def validate_lesson(lesson: dict) -> None:
         raise ValueError("Lesson segment must be an exact time range, for example '00:00–06:20'.")
 
 
-def due_label(days: int) -> str:
-    return (datetime.now() + timedelta(days=days)).strftime("%a, %d %b")
-
-
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("lesson_json", type=Path)
@@ -54,17 +49,8 @@ def main() -> None:
     if prior.get("source_url") == lesson["source_url"]:
         raise ValueError("Refusing to publish the same source URL twice in a row.")
 
-    review = state.get("review", [])
-    for phrase in prior.get("phrases", []):
-        if phrase["phrase"] not in {item["phrase"] for item in review}:
-            review.append({
-                "phrase": phrase["phrase"],
-                "due": due_label(3),
-                "context": phrase["note"],
-            })
-
     state["today"] = {**lesson, "status": "ready"}
-    state["review"] = review[:12]
+    state["review"] = state.get("review", [])[:12]
     history = state.setdefault("history", [])
     if prior:
         history.insert(0, {
@@ -72,6 +58,7 @@ def main() -> None:
             "source_url": prior.get("source_url"),
             "theme": prior.get("theme"),
             "source": prior.get("source"),
+            "status": prior.get("status"),
         })
     state["history"] = history[:90]
 

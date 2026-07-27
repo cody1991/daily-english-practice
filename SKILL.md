@@ -35,6 +35,7 @@ Assume this default profile unless the user overrides it:
 - Keep the default day to 20 minutes: 8 minutes first listening, 5 minutes transcript-assisted listening, 4 minutes shadowing, and 3 minutes speaking/review.
 - Treat `Too hard` feedback as a signal to select a shorter, slower, or more scaffolded source next time.
 - Treat `Skip` as neutral. Do not punish the learner with an artificially harder or longer lesson.
+- A completed lesson schedules its phrases for review three days later. Do not schedule phrases from skipped or too-hard lessons.
 
 ## State and Delivery
 

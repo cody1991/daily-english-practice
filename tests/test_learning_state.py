@@ -7,7 +7,11 @@ from app.server import apply_action, completion_streak
 def state_for(day="2026-07-27"):
     return {
         "profile": {"streak": 0, "completed_dates": [], "last_completed_date": None},
-        "today": {"id": f"{day}-lesson", "status": "ready"},
+        "today": {
+            "id": f"{day}-lesson",
+            "status": "ready",
+            "phrases": [{"phrase": "Could we clarify that?", "note": "Ask for detail."}],
+        },
         "activity": [],
     }
 
@@ -26,6 +30,7 @@ class LearningStateTests(unittest.TestCase):
         self.assertEqual(result["today"]["status"], "completed")
         self.assertEqual(result["profile"]["streak"], 3)
         self.assertEqual(result["profile"]["last_completed_date"], "2026-07-27")
+        self.assertEqual(result["review"][0]["due_date"], "2026-07-30")
 
     def test_logged_lesson_requires_reset_before_change(self):
         state = apply_action(state_for(), "complete")
@@ -36,6 +41,7 @@ class LearningStateTests(unittest.TestCase):
         reset = apply_action(state, "reset")
         self.assertEqual(reset["today"]["status"], "ready")
         self.assertEqual(reset["profile"]["streak"], 0)
+        self.assertEqual(reset["review"], [])
 
 
 if __name__ == "__main__":

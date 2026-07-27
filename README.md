@@ -31,3 +31,5 @@ scripts/send_wecom_lesson.sh
 ## Sync Progress
 
 The dashboard keeps learning progress in `.learning/state.json`. Click **Sync GitHub** after logging a lesson to commit and push that file to the private repository. The daily automation syncs newly published lessons automatically. `.env` is never committed.
+
+Completed lessons add their reusable phrases to the review queue for three days later. Skipped and too-hard lessons do not add review items.

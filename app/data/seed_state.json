@@ -26,17 +26,6 @@
       {"phrase": "What would change your mind?", "note": "Keep a disagreement collaborative."}
     ]
   },
-  "review": [
-    {"phrase": "Could you walk me through that again?", "due": "Today", "context": "Ask for clarification"},
-    {"phrase": "I will circle back once I have checked.", "due": "Tomorrow", "context": "Set a follow-up"},
-    {"phrase": "That is a good point. My concern is...", "due": "Wed", "context": "Offer a different view"}
-  ],
-  "week": [
-    {"day": "M", "label": "disagree", "state": "today"},
-    {"day": "T", "label": "small talk", "state": "planned"},
-    {"day": "W", "label": "clarify", "state": "planned"},
-    {"day": "T", "label": "feedback", "state": "planned"},
-    {"day": "F", "label": "retell", "state": "planned"}
-  ],
+  "review": [],
   "activity": []
 }
