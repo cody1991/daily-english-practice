@@ -23,7 +23,7 @@ Assume this default profile unless the user overrides it:
 3. Research current candidates with `agent-reach`. Prefer a 3-8 minute segment from an official source page, channel, or feed with English subtitles or a transcript. Record its exact start and end timestamps; do not label an unspecified clip as a "selected segment".
 4. Choose one source that serves either workplace communication or everyday social English. Use work material about communication, feedback, clarification, disagreement, prioritisation, or meetings; do not choose generic business news by default.
 5. Create exactly one lesson: a listening focus, 2-3 reusable phrases, and one 30-second speaking task. Do not overload the learner with extra links or vocabulary lists.
-6. Save the lesson JSON locally, then run `scripts/publish_lesson.py` to update the dashboard state. The script preserves profile, prior activity, and the review queue.
+6. Save the lesson JSON locally, then run `scripts/publish_lesson.py` to update the dashboard state. The script preserves profile, prior activity, and the review queue. Run `scripts/sync_state.sh` after publication so the private GitHub repository receives the new lesson.
 7. When the user has configured WeCom delivery, run `scripts/send_wecom_lesson.sh` after publication. It sends a concise reminder and the source link, not a copied transcript.
 
 ## Content Rules
@@ -38,7 +38,7 @@ Assume this default profile unless the user overrides it:
 
 ## State and Delivery
 
-The dashboard uses ignored local state in `.learning/state.json`. Keep personal progress and Webhook credentials out of Git.
+The dashboard stores progress in `.learning/state.json`, which is versioned in this private repository so progress can be synced across machines. Keep Webhook credentials in ignored `.env` only.
 
 ```bash
 python3 scripts/publish_lesson.py \
@@ -50,4 +50,10 @@ When `.env` contains `WECOM_WEBHOOK_URL`, send the published reminder with:
 
 ```bash
 scripts/send_wecom_lesson.sh
+```
+
+Sync the versioned learning state after generating a lesson, or use the dashboard's **Sync GitHub** button after logging practice:
+
+```bash
+scripts/sync_state.sh
 ```

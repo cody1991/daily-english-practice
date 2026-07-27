@@ -44,6 +44,10 @@ button { min-height:34px; padding:7px 10px; border:1px solid #96a197; background
 button:hover { transform:translateY(-1px); background:#334239; }
 button.primary { border-color:var(--lime); background:var(--lime); color:var(--night); }
 button.primary:hover { background:#dcff9f; }
+button:disabled { cursor:not-allowed; opacity:.55; transform:none; }
+.sync-row { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-top:13px; }
+.sync-row button { min-height:28px; padding:5px 8px; font-size:11px; }
+.sync-row span { color:#cbd3ca; font-size:11px; }
 .phrase-section { padding:70px 0 56px; }
 .section-heading { display:flex; justify-content:space-between; align-items:baseline; gap:30px; }
 .section-heading h2, .review-section h2 { margin:7px 0 0; font-family:Fraunces, Georgia, serif; font-size:32px; font-weight:500; line-height:1; }

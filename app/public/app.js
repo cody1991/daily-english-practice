@@ -1,11 +1,51 @@
 const stateUrl = "/api/state";
 
+function makeElement(tag, className, text) {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  if (text) element.textContent = text;
+  return element;
+}
+
+function renderPhrases(phrases) {
+  const container = document.querySelector("#phrase-list");
+  container.replaceChildren(...phrases.map((item, index) => {
+    const row = makeElement("div", "phrase-row");
+    row.append(
+      makeElement("span", "phrase-index", String(index + 1).padStart(2, "0")),
+      makeElement("span", "phrase-text", item.phrase),
+      makeElement("span", "phrase-note", item.note)
+    );
+    return row;
+  }));
+}
+
+function renderReview(items) {
+  const container = document.querySelector("#review-list");
+  container.replaceChildren(...items.map((item) => {
+    const row = makeElement("div", "review-item");
+    const copy = document.createElement("div");
+    copy.append(makeElement("strong", "", item.phrase), makeElement("span", "", item.context));
+    row.append(makeElement("time", "", item.due), copy);
+    return row;
+  }));
+}
+
+function renderWeek(items) {
+  const container = document.querySelector("#week-strip");
+  container.replaceChildren(...items.map((item) => {
+    const state = ["today", "planned", "completed"].includes(item.state) ? item.state : "planned";
+    const cell = makeElement("div", `day-cell ${state}`);
+    cell.append(makeElement("b", "", item.day), makeElement("span", "", item.label));
+    return cell;
+  }));
+}
+
 function render(state) {
   const lesson = state.today;
   document.querySelector("#lesson-date").textContent = lesson.date;
-  document.querySelector("#today-title").innerHTML = lesson.theme.replace(" ", "<br />");
-  document.querySelector(".lesson-intro h2").innerHTML = lesson.theme.replace(" ", "<br />");
-  document.querySelector(".lede").textContent = "A real voice, one small response, and a way to carry the language into your next conversation.";
+  document.querySelector("#today-title").textContent = lesson.theme;
+  document.querySelector(".lesson-intro h2").textContent = lesson.theme;
   document.querySelector("#source-name").textContent = lesson.source;
   document.querySelector("#source-duration").textContent = `${lesson.duration} · ${lesson.segment}`;
   document.querySelector("#source-accent").textContent = lesson.accent;
@@ -14,23 +54,33 @@ function render(state) {
   document.querySelector("#speaking-task").textContent = lesson.speaking_task;
   document.querySelector("#streak-value").textContent = state.profile.streak;
   document.querySelector("#review-count").textContent = String(state.review.length).padStart(2, "0");
+  renderPhrases(lesson.phrases);
+  renderReview(state.review);
+  renderWeek(state.week);
 
-  const phrases = document.querySelector("#phrase-list");
-  phrases.innerHTML = lesson.phrases.map((item, index) => `
-    <div class="phrase-row"><span class="phrase-index">0${index + 1}</span><span class="phrase-text">${item.phrase}</span><span class="phrase-note">${item.note}</span></div>`).join("");
+  const logged = lesson.status !== "ready";
+  document.querySelectorAll("[data-action]").forEach((button) => {
+    button.disabled = logged && button.dataset.action !== "reset";
+    button.hidden = button.dataset.action === "reset" ? !logged : false;
+  });
+  const statusCopy = {
+    ready: "No perfect study session required. Just make contact with the language.",
+    completed: "Logged. Tomorrow will build on this without repeating the material.",
+    needs_review: "Noted. This will return in a slower, smaller form.",
+    skipped: "Skipped without guilt. The next lesson stays short and useful."
+  };
+  document.querySelector("#status-copy").textContent = statusCopy[lesson.status] || statusCopy.ready;
+}
 
-  const review = document.querySelector("#review-list");
-  review.innerHTML = state.review.map((item) => `
-    <div class="review-item"><time>${item.due}</time><div><strong>${item.phrase}</strong><span>${item.context}</span></div></div>`).join("");
-
-  const week = document.querySelector("#week-strip");
-  week.innerHTML = state.week.map((item) => `
-    <div class="day-cell ${item.state}"><b>${item.day}</b><span>${item.label}</span></div>`).join("");
-
-  const copy = document.querySelector("#status-copy");
-  if (lesson.status === "completed") copy.textContent = "Logged. Tomorrow will build on this without repeating the material.";
-  if (lesson.status === "needs_review") copy.textContent = "Noted. This will return in a slower, smaller form.";
-  if (lesson.status === "skipped") copy.textContent = "Skipped without guilt. The next lesson stays short and useful.";
+async function request(url, payload) {
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || "Something went wrong.");
+  return data;
 }
 
 async function load() {
@@ -40,13 +90,24 @@ async function load() {
 
 document.querySelectorAll("[data-action]").forEach((button) => {
   button.addEventListener("click", async () => {
-    const response = await fetch("/api/action", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action: button.dataset.action })
-    });
-    if (response.ok) render(await response.json());
+    try {
+      render(await request("/api/action", { action: button.dataset.action }));
+    } catch (error) {
+      document.querySelector("#sync-copy").textContent = error.message;
+    }
   });
+});
+
+document.querySelector("[data-sync]").addEventListener("click", async () => {
+  const copy = document.querySelector("#sync-copy");
+  copy.textContent = "Syncing...";
+  try {
+    const result = await request("/api/sync", {});
+    render(result.state);
+    copy.textContent = result.sync.message;
+  } catch (error) {
+    copy.textContent = error.message;
+  }
 });
 
 load();

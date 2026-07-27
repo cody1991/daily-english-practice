@@ -27,3 +27,7 @@ When `.env` contains `WECOM_WEBHOOK_URL`, send the compact daily reminder:
 ```bash
 scripts/send_wecom_lesson.sh
 ```
+
+## Sync Progress
+
+The dashboard keeps learning progress in `.learning/state.json`. Click **Sync GitHub** after logging a lesson to commit and push that file to the private repository. The daily automation syncs newly published lessons automatically. `.env` is never committed.
