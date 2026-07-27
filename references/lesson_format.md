@@ -1,6 +1,6 @@
 # Lesson Format
 
-Create a JSON object compatible with `publish_lesson.py`:
+Create a JSON object compatible with `scripts/publish-lesson.js`:
 
 ```json
 {
