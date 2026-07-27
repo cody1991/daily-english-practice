@@ -10,7 +10,7 @@ python3 app/server.py
 
 Open `http://127.0.0.1:4173`.
 
-The dashboard records `Done`, `Too hard`, and `Skip today` actions in ignored local state at `.learning/state.json`.
+The dashboard records `Done`, `Too hard`, and `Skip today` actions in `.learning/state.json`. The learning state is versioned with this private project so course history and progress can be synced; `.env` remains local and ignored.
 
 ## Publish a Lesson
 
