@@ -3,7 +3,9 @@
     "name": "Cody",
     "goal": "Daily conversation and work English",
     "minutes": 20,
-    "streak": 0
+    "streak": 0,
+    "completed_dates": [],
+    "last_completed_date": null
   },
   "today": {
     "id": "2026-07-27-disagree",
