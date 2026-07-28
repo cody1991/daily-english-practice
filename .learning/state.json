@@ -10,32 +10,40 @@
   "review": [],
   "activity": [],
   "today": {
-    "id": "2026-07-27-plans",
-    "date": "Monday, 27 July",
-    "theme": "Ask about someone’s plans naturally",
-    "source": "Easy English 8: What are you doing today?",
-    "source_type": "Street interview + English subtitles",
-    "source_url": "https://www.youtube.com/watch?v=G2xWg2ckKHI",
-    "duration": "03:33",
-    "segment": "00:00–03:33",
-    "accent": "UK English",
-    "listen_task": "First pass: note two different answers to the question “What are you doing today?” and one follow-up question the interviewer uses.",
-    "speaking_task": "In 30 seconds, say what you are doing after work today, then ask a colleague what they are up to.",
+    "id": "2026-07-28-constructive-conversations",
+    "date": "Tuesday, 28 July",
+    "theme": "Disagree constructively and move the conversation forward",
+    "source": "TED — Julia Dhar: How to have constructive conversations",
+    "source_type": "TED Talk video + English transcript",
+    "source_url": "https://www.ted.com/talks/julia_dhar_how_to_have_constructive_conversations",
+    "duration": "04:48",
+    "segment": "00:00–04:48",
+    "accent": "Australian English",
+    "listen_task": "First pass: identify Julia Dhar’s contrast between seeking victory and seeking progress, then note one way curiosity can change a disagreement.",
+    "speaking_task": "In 30 seconds, respond to a colleague who disagrees with your approach: acknowledge their point, ask one curious question, and suggest a next step that moves the work forward.",
     "phrases": [
       {
-        "phrase": "What are you up to today?",
-        "note": "A natural, friendly way to ask about someone’s plans."
+        "phrase": "I see where you're coming from.",
+        "note": "Acknowledge the other person before you offer a different view."
       },
       {
-        "phrase": "I’m just returning from...",
-        "note": "Explain where you have just been before saying what comes next."
+        "phrase": "Could we test that assumption?",
+        "note": "Challenge an idea collaboratively instead of rejecting it outright."
       },
       {
-        "phrase": "That sounds like a good plan.",
-        "note": "A warm response before you add a follow-up question."
+        "phrase": "What would progress look like here?",
+        "note": "Shift a disagreement toward a practical shared outcome."
       }
     ],
     "status": "ready"
   },
-  "history": []
+  "history": [
+    {
+      "id": "2026-07-27-plans",
+      "source_url": "https://www.youtube.com/watch?v=G2xWg2ckKHI",
+      "theme": "Ask about someone’s plans naturally",
+      "source": "Easy English 8: What are you doing today?",
+      "status": "ready"
+    }
+  ]
 }
