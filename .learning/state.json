@@ -10,34 +10,41 @@
   "review": [],
   "activity": [],
   "today": {
-    "id": "2026-07-28-constructive-conversations",
-    "date": "Tuesday, 28 July",
-    "theme": "Disagree constructively and move the conversation forward",
-    "source": "TED — Julia Dhar: How to have constructive conversations",
-    "source_type": "TED Talk video + English transcript",
-    "source_url": "https://www.ted.com/talks/julia_dhar_how_to_have_constructive_conversations",
-    "duration": "04:48",
-    "segment": "00:00–04:48",
-    "accent": "Australian English",
-    "listen_task": "First pass: identify Julia Dhar’s contrast between seeking victory and seeking progress, then note one way curiosity can change a disagreement.",
-    "speaking_task": "In 30 seconds, respond to a colleague who disagrees with your approach: acknowledge their point, ask one curious question, and suggest a next step that moves the work forward.",
+    "id": "2026-07-29-feedback-that-helps",
+    "date": "Wednesday, 29 July",
+    "theme": "Give feedback that invites improvement",
+    "source": "Harvard Business Review — How to Give Feedback People Can Actually Use",
+    "source_type": "HBR IdeaCast podcast + English transcript",
+    "source_url": "https://hbr.org/podcast/2024/05/how-to-give-feedback-people-can-actually-use",
+    "duration": "05:16",
+    "segment": "00:00–05:16",
+    "accent": "US English",
+    "listen_task": "First pass: notice the difference between judging a person and describing an observable impact. On the second listen, identify the one question that would help the other person respond.",
+    "speaking_task": "In 30 seconds, give a colleague useful feedback on a delayed handover: name the specific effect, ask what got in the way, and agree on one change for next time.",
     "phrases": [
       {
-        "phrase": "I see where you're coming from.",
-        "note": "Acknowledge the other person before you offer a different view."
+        "phrase": "I noticed that...",
+        "note": "Start with a specific observation instead of a judgement."
       },
       {
-        "phrase": "Could we test that assumption?",
-        "note": "Challenge an idea collaboratively instead of rejecting it outright."
+        "phrase": "The impact was...",
+        "note": "Explain why the issue mattered to the team or customer."
       },
       {
-        "phrase": "What would progress look like here?",
-        "note": "Shift a disagreement toward a practical shared outcome."
+        "phrase": "What would make this easier next time?",
+        "note": "Invite a practical solution together."
       }
     ],
     "status": "ready"
   },
   "history": [
+    {
+      "id": "2026-07-28-constructive-conversations",
+      "source_url": "https://www.ted.com/talks/julia_dhar_how_to_have_constructive_conversations",
+      "theme": "Disagree constructively and move the conversation forward",
+      "source": "TED — Julia Dhar: How to have constructive conversations",
+      "status": "ready"
+    },
     {
       "id": "2026-07-27-plans",
       "source_url": "https://www.youtube.com/watch?v=G2xWg2ckKHI",
