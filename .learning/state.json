@@ -10,34 +10,41 @@
   "review": [],
   "activity": [],
   "today": {
-    "id": "2026-07-29-feedback-that-helps",
-    "date": "Wednesday, 29 July",
-    "theme": "Give feedback that invites improvement",
-    "source": "Harvard Business Review — How to Give Feedback People Can Actually Use",
-    "source_type": "HBR IdeaCast podcast + English transcript",
-    "source_url": "https://hbr.org/podcast/2024/05/how-to-give-feedback-people-can-actually-use",
-    "duration": "05:16",
-    "segment": "00:00–05:16",
+    "id": "2026-07-30-respond-in-meetings",
+    "date": "Thursday, 30 July",
+    "theme": "Respond clearly in a fast-moving meeting",
+    "source": "Stanford Engineering — The future of effective communication",
+    "source_type": "Stanford Engineering podcast + English transcript",
+    "source_url": "https://engineering.stanford.edu/news/future-effective-communication",
+    "duration": "03:15",
+    "segment": "02:04–05:19",
     "accent": "US English",
-    "listen_task": "First pass: notice the difference between judging a person and describing an observable impact. On the second listen, identify the one question that would help the other person respond.",
-    "speaking_task": "In 30 seconds, give a colleague useful feedback on a delayed handover: name the specific effect, ask what got in the way, and agree on one change for next time.",
+    "listen_task": "First pass: notice the contrast between reacting quickly and choosing the right moment to speak. With the transcript, find the two things the speaker says to consider before contributing in a busy meeting.",
+    "speaking_task": "In 30 seconds, imagine a team discussion is moving quickly. Say what the goal is, give one concise point, and explain when you would wait before adding it.",
     "phrases": [
       {
-        "phrase": "I noticed that...",
-        "note": "Start with a specific observation instead of a judgement."
+        "phrase": "What needs to be done?",
+        "note": "Use this to focus a fast discussion on the immediate outcome."
       },
       {
-        "phrase": "The impact was...",
-        "note": "Explain why the issue mattered to the team or customer."
+        "phrase": "I might wait until the appropriate moment to contribute.",
+        "note": "Show that timing your input can be a deliberate choice."
       },
       {
-        "phrase": "What would make this easier next time?",
-        "note": "Invite a practical solution together."
+        "phrase": "Let me make this concise.",
+        "note": "Signal a short, focused contribution before sharing your point."
       }
     ],
     "status": "ready"
   },
   "history": [
+    {
+      "id": "2026-07-29-feedback-that-helps",
+      "source_url": "https://hbr.org/podcast/2024/05/how-to-give-feedback-people-can-actually-use",
+      "theme": "Give feedback that invites improvement",
+      "source": "Harvard Business Review — How to Give Feedback People Can Actually Use",
+      "status": "ready"
+    },
     {
       "id": "2026-07-28-constructive-conversations",
       "source_url": "https://www.ted.com/talks/julia_dhar_how_to_have_constructive_conversations",
