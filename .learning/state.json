@@ -10,34 +10,41 @@
   "review": [],
   "activity": [],
   "today": {
-    "id": "2026-07-30-respond-in-meetings",
-    "date": "Thursday, 30 July",
-    "theme": "Respond clearly in a fast-moving meeting",
-    "source": "Stanford Engineering — The future of effective communication",
-    "source_type": "Stanford Engineering podcast + English transcript",
-    "source_url": "https://engineering.stanford.edu/news/future-effective-communication",
-    "duration": "03:15",
-    "segment": "02:04–05:19",
+    "id": "2026-08-03-listen-to-understand",
+    "date": "Monday, 3 August",
+    "theme": "Listen to understand before you respond",
+    "source": "TED@BCG — How to be a great listener",
+    "source_type": "TED talk + English transcript",
+    "source_url": "https://www.ted.com/talks/maegan_stephens_nicole_lowenbraun_how_to_be_a_great_listener?view=transcript",
+    "duration": "05:00",
+    "segment": "00:00–05:00",
     "accent": "US English",
-    "listen_task": "First pass: notice the contrast between reacting quickly and choosing the right moment to speak. With the transcript, find the two things the speaker says to consider before contributing in a busy meeting.",
-    "speaking_task": "In 30 seconds, imagine a team discussion is moving quickly. Say what the goal is, give one concise point, and explain when you would wait before adding it.",
+    "listen_task": "First pass: identify the listening problem the speakers describe and the question they use to shift the conversation. With the transcript, notice one moment when listening is presented as an action rather than simply staying quiet.",
+    "speaking_task": "In 30 seconds, describe a recent one-to-one conversation. Say what the other person may have needed, then ask one open question before giving your own view.",
     "phrases": [
       {
-        "phrase": "What needs to be done?",
-        "note": "Use this to focus a fast discussion on the immediate outcome."
+        "phrase": "Can you say a little more about that?",
+        "note": "Invite detail before you jump to a solution."
       },
       {
-        "phrase": "I might wait until the appropriate moment to contribute.",
-        "note": "Show that timing your input can be a deliberate choice."
+        "phrase": "What would be most helpful right now?",
+        "note": "Focus the conversation on the other person's immediate need."
       },
       {
-        "phrase": "Let me make this concise.",
-        "note": "Signal a short, focused contribution before sharing your point."
+        "phrase": "Let me check that I've understood.",
+        "note": "Confirm meaning before you respond or act."
       }
     ],
     "status": "ready"
   },
   "history": [
+    {
+      "id": "2026-07-30-respond-in-meetings",
+      "source_url": "https://engineering.stanford.edu/news/future-effective-communication",
+      "theme": "Respond clearly in a fast-moving meeting",
+      "source": "Stanford Engineering — The future of effective communication",
+      "status": "ready"
+    },
     {
       "id": "2026-07-29-feedback-that-helps",
       "source_url": "https://hbr.org/podcast/2024/05/how-to-give-feedback-people-can-actually-use",
