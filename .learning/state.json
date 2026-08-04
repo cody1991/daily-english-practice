@@ -10,34 +10,41 @@
   "review": [],
   "activity": [],
   "today": {
-    "id": "2026-08-04-office-preferences",
-    "date": "Tuesday, 4 August",
-    "theme": "Talk naturally about where you work best",
-    "source": "BBC Learning English — Real Easy English: Talking about the office",
-    "source_type": "Video + English transcript",
-    "source_url": "https://www.youtube.com/watch?v=O6h8qq5rBi0",
-    "duration": "05:18",
-    "segment": "00:00–05:18",
+    "id": "2026-08-05-cycle-more",
+    "date": "Wednesday, 5 August",
+    "theme": "Talk about cycling as everyday transport",
+    "source": "BBC Learning English — 6 Minute English: Should we cycle more?",
+    "source_type": "Audio + English transcript",
+    "source_url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260709",
+    "duration": "06:00",
+    "segment": "00:00–06:00",
     "accent": "UK English",
-    "listen_task": "First pass: note each speaker's work arrangement and one reason they prefer the office or home. With the transcript, notice how they compare options without sounding too formal.",
-    "speaking_task": "In 30 seconds, tell a colleague where you work best and why. Then ask: ‘What works best for you?’",
+    "listen_task": "First pass: note why cycling is common in the Netherlands and what Gulf cities hope cycling will improve. With the transcript, catch how speakers describe habits that are ‘deeply ingrained’ vs trends that ‘take off’.",
+    "speaking_task": "In 30 seconds, say how often you cycle (or would cycle) in the Netherlands, one benefit for quality of life, and one reason it is hard for some people to start.",
     "phrases": [
       {
-        "phrase": "I usually work from home, but ...",
-        "note": "Describe a regular pattern, then add an exception or preference."
+        "phrase": "It's deeply ingrained in the culture.",
+        "note": "Say a habit is firmly established and unlikely to change."
       },
       {
-        "phrase": "I get more done when ...",
-        "note": "Explain which setting helps you focus or work efficiently."
+        "phrase": "Sales really took off last year.",
+        "note": "Describe something suddenly becoming popular or successful."
       },
       {
-        "phrase": "It depends on what I'm working on.",
-        "note": "Give a balanced answer instead of choosing one option absolutely."
+        "phrase": "It improves quality of life / liveability.",
+        "note": "Talk about comfort, health, and how pleasant a place is to live in."
       }
     ],
     "status": "ready"
   },
   "history": [
+    {
+      "id": "2026-08-04-office-preferences",
+      "source_url": "https://www.youtube.com/watch?v=O6h8qq5rBi0",
+      "theme": "Talk naturally about where you work best",
+      "source": "BBC Learning English — Real Easy English: Talking about the office",
+      "status": "ready"
+    },
     {
       "id": "2026-08-03-listen-to-understand",
       "source_url": "https://www.ted.com/talks/maegan_stephens_nicole_lowenbraun_how_to_be_a_great_listener?view=transcript",
