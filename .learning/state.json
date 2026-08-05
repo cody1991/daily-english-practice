@@ -10,34 +10,41 @@
   "review": [],
   "activity": [],
   "today": {
-    "id": "2026-08-05-cycle-more",
+    "id": "2026-08-05-manage-conflict",
     "date": "Wednesday, 5 August",
-    "theme": "Talk about cycling as everyday transport",
-    "source": "BBC Learning English — 6 Minute English: Should we cycle more?",
+    "theme": "Handle a workplace disagreement calmly",
+    "source": "British Council LearnEnglish — Managing conflict",
     "source_type": "Audio + English transcript",
-    "source_url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260709",
-    "duration": "06:00",
-    "segment": "00:00–06:00",
+    "source_url": "https://learnenglish.britishcouncil.org/free-resources/business/podcasts-professionals/managing-conflict",
+    "duration": "03:54",
+    "segment": "00:00–03:54",
     "accent": "UK English",
-    "listen_task": "First pass: note why cycling is common in the Netherlands and what Gulf cities hope cycling will improve. With the transcript, catch how speakers describe habits that are ‘deeply ingrained’ vs trends that ‘take off’.",
-    "speaking_task": "In 30 seconds, say how often you cycle (or would cycle) in the Netherlands, one benefit for quality of life, and one reason it is hard for some people to start.",
+    "listen_task": "First pass: identify the two complaints and the mediator's first move. With the transcript, notice how the mediator slows the exchange down and shifts it from blame to one concrete issue.",
+    "speaking_task": "In 30 seconds, respond as the mediator: acknowledge that there is a problem, ask each person to speak in turn, and name one next step that would help the team move forward.",
     "phrases": [
       {
-        "phrase": "It's deeply ingrained in the culture.",
-        "note": "Say a habit is firmly established and unlikely to change."
+        "phrase": "I'd like to try and sort this out.",
+        "note": "Open a difficult conversation with a calm, solution-focused intention."
       },
       {
-        "phrase": "Sales really took off last year.",
-        "note": "Describe something suddenly becoming popular or successful."
+        "phrase": "Can everyone speak one at a time, please?",
+        "note": "Set a respectful boundary when a discussion becomes heated."
       },
       {
-        "phrase": "It improves quality of life / liveability.",
-        "note": "Talk about comfort, health, and how pleasant a place is to live in."
+        "phrase": "That's not fair at all.",
+        "note": "State disagreement directly; follow it with a specific example rather than an accusation."
       }
     ],
     "status": "ready"
   },
   "history": [
+    {
+      "id": "2026-08-05-cycle-more",
+      "source_url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260709",
+      "theme": "Talk about cycling as everyday transport",
+      "source": "BBC Learning English — 6 Minute English: Should we cycle more?",
+      "status": "ready"
+    },
     {
       "id": "2026-08-04-office-preferences",
       "source_url": "https://www.youtube.com/watch?v=O6h8qq5rBi0",
