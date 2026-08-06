@@ -10,34 +10,41 @@
   "review": [],
   "activity": [],
   "today": {
-    "id": "2026-08-05-manage-conflict",
-    "date": "Wednesday, 5 August",
-    "theme": "Handle a workplace disagreement calmly",
-    "source": "British Council LearnEnglish — Managing conflict",
-    "source_type": "Audio + English transcript",
-    "source_url": "https://learnenglish.britishcouncil.org/free-resources/business/podcasts-professionals/managing-conflict",
-    "duration": "03:54",
-    "segment": "00:00–03:54",
-    "accent": "UK English",
-    "listen_task": "First pass: identify the two complaints and the mediator's first move. With the transcript, notice how the mediator slows the exchange down and shifts it from blame to one concrete issue.",
-    "speaking_task": "In 30 seconds, respond as the mediator: acknowledge that there is a problem, ask each person to speak in turn, and name one next step that would help the team move forward.",
+    "id": "2026-08-06-invite-voices",
+    "date": "Thursday, 6 August",
+    "theme": "Invite every voice into a meeting",
+    "source": "Harvard Business Review IdeaCast — Why Your Team Won’t Speak Up (And How to Fix It)",
+    "source_type": "Podcast audio + English transcript",
+    "source_url": "https://hbr.org/podcast/2026/04/why-your-team-wont-speak-up-and-how-to-fix-it",
+    "duration": "05:00",
+    "segment": "00:00–05:00",
+    "accent": "US English",
+    "listen_task": "First pass: identify the three kinds of conversation the host describes. With the transcript, notice how a practical issue can also signal an emotional concern, and listen for the cue that tells a leader to respond with empathy before problem-solving.",
+    "speaking_task": "In 30 seconds, open a meeting about a risky deadline: invite a quieter colleague to share a concern, say you want to understand it before deciding, and name the next step the group will take.",
     "phrases": [
       {
-        "phrase": "I'd like to try and sort this out.",
-        "note": "Open a difficult conversation with a calm, solution-focused intention."
+        "phrase": "Can we make space for concerns before we decide?",
+        "note": "Invite candid input without delaying the whole meeting indefinitely."
       },
       {
-        "phrase": "Can everyone speak one at a time, please?",
-        "note": "Set a respectful boundary when a discussion becomes heated."
+        "phrase": "I want to make sure we hear every perspective.",
+        "note": "Signal that participation, not just speed, matters in a group discussion."
       },
       {
-        "phrase": "That's not fair at all.",
-        "note": "State disagreement directly; follow it with a specific example rather than an accusation."
+        "phrase": "What feels most important to raise?",
+        "note": "Ask an open question that gives a colleague room to name a risk or need."
       }
     ],
     "status": "ready"
   },
   "history": [
+    {
+      "id": "2026-08-05-manage-conflict",
+      "source_url": "https://learnenglish.britishcouncil.org/free-resources/business/podcasts-professionals/managing-conflict",
+      "theme": "Handle a workplace disagreement calmly",
+      "source": "British Council LearnEnglish — Managing conflict",
+      "status": "ready"
+    },
     {
       "id": "2026-08-05-cycle-more",
       "source_url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260709",
