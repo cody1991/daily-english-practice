@@ -10,34 +10,41 @@
   "review": [],
   "activity": [],
   "today": {
-    "id": "2026-08-06-invite-voices",
-    "date": "Thursday, 6 August",
-    "theme": "Invite every voice into a meeting",
-    "source": "Harvard Business Review IdeaCast — Why Your Team Won’t Speak Up (And How to Fix It)",
-    "source_type": "Podcast audio + English transcript",
-    "source_url": "https://hbr.org/podcast/2026/04/why-your-team-wont-speak-up-and-how-to-fix-it",
+    "id": "2026-08-07-curious-conversations",
+    "date": "Friday, 7 August",
+    "theme": "Keep a conversation going with genuine curiosity",
+    "source": "TED — Celeste Headlee: 10 ways to have a better conversation",
+    "source_type": "Talk video + English transcript",
+    "source_url": "https://www.ted.com/talks/celeste_headlee_10_ways_to_have_a_better_conversation?view=transcript",
     "duration": "05:00",
     "segment": "00:00–05:00",
     "accent": "US English",
-    "listen_task": "First pass: identify the three kinds of conversation the host describes. With the transcript, notice how a practical issue can also signal an emotional concern, and listen for the cue that tells a leader to respond with empathy before problem-solving.",
-    "speaking_task": "In 30 seconds, open a meeting about a risky deadline: invite a quieter colleague to share a concern, say you want to understand it before deciding, and name the next step the group will take.",
+    "listen_task": "First pass: identify two habits the speaker asks you to stop and the question style she recommends instead. With the transcript, notice how her follow-up questions hand the focus back to the other person.",
+    "speaking_task": "In 30 seconds, ask a new colleague about their first weeks in the team. Use one open question and one follow-up question, then briefly share a related experience of your own.",
     "phrases": [
       {
-        "phrase": "Can we make space for concerns before we decide?",
-        "note": "Invite candid input without delaying the whole meeting indefinitely."
+        "phrase": "Tell me more about that.",
+        "note": "A warm, low-pressure prompt that helps the other person continue."
       },
       {
-        "phrase": "I want to make sure we hear every perspective.",
-        "note": "Signal that participation, not just speed, matters in a group discussion."
+        "phrase": "What was that like for you?",
+        "note": "Invite a personal detail instead of steering the conversation back to yourself."
       },
       {
-        "phrase": "What feels most important to raise?",
-        "note": "Ask an open question that gives a colleague room to name a risk or need."
+        "phrase": "I’m not familiar with that — could you explain it?",
+        "note": "Stay curious when a colleague mentions an unfamiliar tool, place, or practice."
       }
     ],
     "status": "ready"
   },
   "history": [
+    {
+      "id": "2026-08-06-invite-voices",
+      "source_url": "https://hbr.org/podcast/2026/04/why-your-team-wont-speak-up-and-how-to-fix-it",
+      "theme": "Invite every voice into a meeting",
+      "source": "Harvard Business Review IdeaCast — Why Your Team Won’t Speak Up (And How to Fix It)",
+      "status": "ready"
+    },
     {
       "id": "2026-08-05-manage-conflict",
       "source_url": "https://learnenglish.britishcouncil.org/free-resources/business/podcasts-professionals/managing-conflict",
