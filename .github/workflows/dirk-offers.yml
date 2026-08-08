@@ -1,0 +1,43 @@
+name: Refresh Dirk offers
+
+on:
+  schedule:
+    - cron: "0 8,9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: dirk-offers-pages
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Refresh offers at 10:00 Amsterdam time
+        run: node dirk-offers-dashboard/scripts/refresh-offers.mjs
+      - name: Commit fresh data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dirk-offers-dashboard/public/data dirk-offers-dashboard/data
+          git diff --cached --quiet || git commit -m "chore: refresh Dirk offers"
+          git push
+      - name: Install dashboard dependencies
+        run: npm ci --prefix dirk-offers-dashboard
+      - name: Build dashboard
+        run: npm run build --prefix dirk-offers-dashboard
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dirk-offers-dashboard/dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
