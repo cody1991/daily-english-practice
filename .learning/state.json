@@ -10,34 +10,41 @@
   "review": [],
   "activity": [],
   "today": {
-    "id": "2026-08-07-curious-conversations",
-    "date": "Friday, 7 August",
-    "theme": "Keep a conversation going with genuine curiosity",
-    "source": "TED — Celeste Headlee: 10 ways to have a better conversation",
-    "source_type": "Talk video + English transcript",
-    "source_url": "https://www.ted.com/talks/celeste_headlee_10_ways_to_have_a_better_conversation?view=transcript",
-    "duration": "05:00",
-    "segment": "00:00–05:00",
+    "id": "2026-08-10-delegate-clearly",
+    "date": "Monday, 10 August",
+    "theme": "Delegate a task with clear expectations",
+    "source": "Harvard Business Review Women at Work — The Essentials: Delegating Effectively",
+    "source_type": "Podcast audio + English transcript",
+    "source_url": "https://hbr.org/podcast/2022/04/the-essentials-delegating-effectively",
+    "duration": "05:30",
+    "segment": "00:00–05:30",
     "accent": "US English",
-    "listen_task": "First pass: identify two habits the speaker asks you to stop and the question style she recommends instead. With the transcript, notice how her follow-up questions hand the focus back to the other person.",
-    "speaking_task": "In 30 seconds, ask a new colleague about their first weeks in the team. Use one open question and one follow-up question, then briefly share a related experience of your own.",
+    "listen_task": "First pass: identify two ways delegation can help both the person assigning a task and the colleague receiving it. With the transcript, notice how the speakers explain the goal before they discuss the task itself.",
+    "speaking_task": "In 30 seconds, delegate one small task to a colleague: say why it matters, describe a successful outcome, and ask them to confirm the next step.",
     "phrases": [
       {
-        "phrase": "Tell me more about that.",
-        "note": "A warm, low-pressure prompt that helps the other person continue."
+        "phrase": "Here’s why this matters.",
+        "note": "Give useful context before assigning work."
       },
       {
-        "phrase": "What was that like for you?",
-        "note": "Invite a personal detail instead of steering the conversation back to yourself."
+        "phrase": "What would a successful outcome look like?",
+        "note": "Agree on quality before the work starts."
       },
       {
-        "phrase": "I’m not familiar with that — could you explain it?",
-        "note": "Stay curious when a colleague mentions an unfamiliar tool, place, or practice."
+        "phrase": "Could you sum up what you heard me say?",
+        "note": "Check shared understanding without repeating yourself."
       }
     ],
     "status": "ready"
   },
   "history": [
+    {
+      "id": "2026-08-07-curious-conversations",
+      "source_url": "https://www.ted.com/talks/celeste_headlee_10_ways_to_have_a_better_conversation?view=transcript",
+      "theme": "Keep a conversation going with genuine curiosity",
+      "source": "TED — Celeste Headlee: 10 ways to have a better conversation",
+      "status": "ready"
+    },
     {
       "id": "2026-08-06-invite-voices",
       "source_url": "https://hbr.org/podcast/2026/04/why-your-team-wont-speak-up-and-how-to-fix-it",
