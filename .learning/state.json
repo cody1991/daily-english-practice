@@ -10,34 +10,41 @@
   "review": [],
   "activity": [],
   "today": {
-    "id": "2026-08-10-delegate-clearly",
-    "date": "Monday, 10 August",
-    "theme": "Delegate a task with clear expectations",
-    "source": "Harvard Business Review Women at Work — The Essentials: Delegating Effectively",
+    "id": "2026-08-11-email-tone",
+    "date": "Tuesday, 11 August",
+    "theme": "Make a work email clear without sounding abrupt",
+    "source": "BBC Learning English — 6 Minute English: Rude emails",
     "source_type": "Podcast audio + English transcript",
-    "source_url": "https://hbr.org/podcast/2022/04/the-essentials-delegating-effectively",
-    "duration": "05:30",
-    "segment": "00:00–05:30",
-    "accent": "US English",
-    "listen_task": "First pass: identify two ways delegation can help both the person assigning a task and the colleague receiving it. With the transcript, notice how the speakers explain the goal before they discuss the task itself.",
-    "speaking_task": "In 30 seconds, delegate one small task to a colleague: say why it matters, describe a successful outcome, and ask them to confirm the next step.",
+    "source_url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260702",
+    "duration": "06:34",
+    "segment": "00:00–06:34",
+    "accent": "UK English",
+    "listen_task": "First 8 minutes: listen once and note two email habits the speakers say can feel rude. Then spend 5 minutes with the English transcript: notice how they describe the reader's reaction rather than only the words in the email. For 4 minutes, shadow one short exchange, copying its calm, conversational tone.",
+    "speaking_task": "In 30 seconds, turn a short, direct work email into a warmer one: greet the person, make one clear request, and close with thanks. Then say why that wording feels better.",
     "phrases": [
       {
-        "phrase": "Here’s why this matters.",
-        "note": "Give useful context before assigning work."
+        "phrase": "I hope you don't mind me asking, but...",
+        "note": "Soften a question or request when the relationship matters."
       },
       {
-        "phrase": "What would a successful outcome look like?",
-        "note": "Agree on quality before the work starts."
+        "phrase": "Could you clarify what you mean by...?",
+        "note": "Ask for detail without implying the other person was unclear on purpose."
       },
       {
-        "phrase": "Could you sum up what you heard me say?",
-        "note": "Check shared understanding without repeating yourself."
+        "phrase": "Thanks for getting back to me.",
+        "note": "Acknowledge a reply before moving to your next point."
       }
     ],
     "status": "ready"
   },
   "history": [
+    {
+      "id": "2026-08-10-delegate-clearly",
+      "source_url": "https://hbr.org/podcast/2022/04/the-essentials-delegating-effectively",
+      "theme": "Delegate a task with clear expectations",
+      "source": "Harvard Business Review Women at Work — The Essentials: Delegating Effectively",
+      "status": "ready"
+    },
     {
       "id": "2026-08-07-curious-conversations",
       "source_url": "https://www.ted.com/talks/celeste_headlee_10_ways_to_have_a_better_conversation?view=transcript",
